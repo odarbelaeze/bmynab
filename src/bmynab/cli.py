@@ -64,7 +64,7 @@ class PayeeCache:
 @click.option("--output", "-o", type=click.File("w"), default="-")
 @click.option("--clear-cache", is_flag=True)
 @click.option("--credit-card", "-c", is_flag=True)
-def convert(input, output, clear_cache, credit_card):
+def main(input, output, clear_cache, credit_card):
     reader = csv.reader(input, delimiter="\t")
     writer = csv.writer(output)
     next(reader)  # skip headers
@@ -88,4 +88,4 @@ def convert(input, output, clear_cache, credit_card):
 
 
 if __name__ == "__main__":
-    convert()
+    main()
